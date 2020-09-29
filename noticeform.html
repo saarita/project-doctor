@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style></style>
+    <link rel="stylesheet" type="text/css" href="noticeform.css">
+  </head>
+  <body>
+       <div id = "error_message">
+
+
+</div>
+    <div class="add">
+
+      <h2> Add</h2>
+      <form method="post" id="add" action="" onsubmit="return validate();">
+        
+        <label> Name: </label><br>
+        <input type="text" name="Name" id="name" placeholder="Enter the  name"><br><br>
+         <label>Email</label><br>
+        <input type="email" name="email" id="email" placeholder="Enter the email"><br><br>
+        <label>Description</label><br>
+        <textarea  type="textarea" name="name" id="des" placeholder=" "></textarea>><br><br>  
+     <input type="submit" value="Submit" name="register" class="btn">        
+      </form>
+    </div>
+<script>
+  function validate(){
+     var email = document.getElementById("email").value;
+      var name = document.getElementById("name").value;
+ var des = document.getElementById("des").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+   var text;
+
+ if(email.indexOf("@") == -1 || email.length < 6){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+ if(name ==""){
+    text = "Please Enter  Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+ if(des ==""){
+    text = "Please Enter Description";
+    error_message.innerHTML = text;
+    return false;
+  }
+alert("Form Submitted Successfully!");
+  return true;
+
+  }
+</script>
+  </body>
+  </html>
